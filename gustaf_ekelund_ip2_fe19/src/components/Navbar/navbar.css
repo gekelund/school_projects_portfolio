@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 30px 0 30px;
+    background-color: transparent;
+    order: 1;
+    z-index: 1;
+}
+
+.weather {
+    margin-right: auto;
+    order: 2;
+    width: 200px;
+    height: 200px;
+    opacity: 0.7;
+    font-size: 1.2em;
+}
+
+nav {
+    order: 3;
+}
+
+.nav_links a {
+    list-style: none;
+    text-decoration: none;
+    color: #B3875C;
+    font-size: 1.5em;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+
+.nav_links li:hover a:hover{
+    color: #0099a9;
+}
+
+a.current {
+    font-size: 1.8em;
+    border-left: 2px solid #0099a9;
+    border-right: 2px solid #0099a9;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+@media screen and (max-width: 968px){
+
+    .nav_links a {
+        list-style: none;
+        text-decoration: none;
+        color: #B3875C;
+        font-size: 0.8em;
+    }
+    a.current {
+        font-size: 0.9em;
+        border-left: 1px solid #0099a9;
+        border-right: 1px solid #0099a9;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .weather {
+        margin-right: auto;
+        order: 2;
+        width: 100px;
+        height: 100px;
+        opacity: 0.7;
+        font-size: 0.7em;
+    }
+}

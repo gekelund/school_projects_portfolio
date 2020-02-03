@@ -1,0 +1,54 @@
+@import './Mixins.scss';
+@import './Variables.scss';
+
+.flexContainerColumn {
+    @include FlexColumn();
+}
+
+.flexContainerRow {
+    @include FlexRow();
+}
+
+.flexCenter {
+    @include FlexCenter();
+}
+
+.widthSmall {
+    width: 200px;
+}
+
+.textStyleLarge {
+    font-size: 1.3em;
+}
+
+.textStyleSmall {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.textStyleMedium {
+    font-size: 1em;
+    font-weight: bold;
+    width: 200px;
+}
+
+.AboutMe {
+    @include FlexCenter();
+    flex-direction: column;
+}
+
+.Mobile {
+    @media screen and (max-width: 968px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 50px;;
+        margin-top: 20px;
+        width: 200px;
+    }
+
+}
+
+
