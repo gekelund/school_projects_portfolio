@@ -44,11 +44,11 @@ const Education = () => {
 
             {educations.map((education) => {
                 return (
-                    <div className={[Components.flexContainerRow, Components.Mobile].join(' ')}>
-                        <p className={Components.textStyleMedium}>{education.yearStart} - {education.yearEnd}</p>
-                        <ul style={{ listStyle: "none" }}>
-                            <li className={Components.textStyleLarge}>{education.education}</li>
-                            <li className={Components.textStyleSmall}>{education.school}</li>
+                    <div key={education.yearStart + education.yearEnd} className={[Components.flexContainerRow, Components.Mobile].join(' ')}>
+                        <p key={education.yearStart} className={Components.textStyleMedium}>{education.yearStart} - {education.yearEnd}</p>
+                        <ul key={education.education + education.education} style={{ listStyle: "none" }}>
+                            <li key={education.education} className={Components.textStyleLarge}>{education.education}</li>
+                            <li key={education.school} className={Components.textStyleSmall}>{education.school}</li>
                         </ul>
                     </div>
                 )

@@ -42,11 +42,11 @@ const Experience = () => {
 
             {experiences.map((experience) => {
                 return (
-                    <div className={[Components.flexContainerRow, Components.Mobile].join(' ')}>
-                        <p className={Components.textStyleMedium}>{experience.yearStart} - {experience.yearEnd}</p>
-                        <ul style={{ listStyle: "none" }}>
-                            <li className={Components.textStyleLarge}>{experience.role}</li>
-                            <li className={Components.textStyleSmall}>{experience.employer}</li>
+                    <div key={experience.role + experience.role} className={[Components.flexContainerRow, Components.Mobile].join(' ')}>
+                        <p key={experience.yearEnd + experience.yearStart} className={Components.textStyleMedium}>{experience.yearStart} - {experience.yearEnd}</p>
+                        <ul key={experience.role + experience.employer} style={{ listStyle: "none" }}>
+                            <li key={experience.role} className={Components.textStyleLarge}>{experience.role}</li>
+                            <li key={experience.employer} className={Components.textStyleSmall}>{experience.employer}</li>
                         </ul>
                     </div>
                 )
