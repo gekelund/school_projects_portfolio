@@ -1,0 +1,56 @@
+@import '../../styleAssets.module.scss';
+
+.wrapper {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-inline-end: 20px;
+        
+            li {
+                list-style: none;
+                padding: 10px;
+                font-size: 25px;
+        
+                
+                a {
+                    color: #B3875C;
+                }
+        
+                a:hover {
+                    color: $ColorHover;
+                }
+            }
+        }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .wrapper {
+        background-color: $PrimaryBackgroundColor;
+        box-shadow: 0px 10px 12px black;
+
+        .container {
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            height: 60px;
+    
+            li {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
