@@ -21,7 +21,7 @@ const ResponsivNavigation = ({ hoverBackground }) => {
                     <NavLink
                         onMouseEnter={() => setHoverIndex(index)}
                         onMouseLeave={() => setHoverIndex(-1)}
-                        style={{ background: hoverIndex === index ? (hoverBackground || 'rgba(233,233,233,0.8)') : '' }}
+                        style={{ background: hoverIndex === index ? (hoverBackground || '#153944') : '' }}
                         key={link.text + link.icon}
                         to={link.path}
                         exact activeClassName={NavbarStyling.current}
