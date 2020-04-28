@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, withRouter, } from 'react-router-dom';
 import { navLinks } from './navLinks.js';
 import NavbarStyling from './navbarStyling.module.scss';
@@ -11,9 +11,41 @@ const ResponsivNavigation = ({ hoverBackground }) => {
     const [navOpen, setNavOpen] = useState(false);
 
 
+
+    // Hook
+    const useWindowSize = () => {
+        const isClient = typeof window === 'object';
+
+        const getSize = () => {
+            return {
+                width: isClient ? window.innerWidth : undefined,
+                height: isClient ? window.innerHeight : undefined
+            };
+        }
+
+        const [windowSize, setWindowSize] = useState(getSize);
+        console.log(windowSize)
+        useEffect(() => {
+            if (!isClient) {
+                return false;
+            }
+
+            const handleResize = () => {
+                setWindowSize(getSize());
+            }
+
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }, []); // Empty array ensures that effect is only run on mount and unmount
+
+        return windowSize;
+    }
+
+    const size = useWindowSize();
+
     return (
-        <nav className={NavbarStyling.responsivNav} style={navOpen ? { 'left': '0px' } : { 'left': '-240px' }}>
-            <ul style={navOpen ? { 'left': '0px' } : { 'left': '-240px' }}>
+        <nav className={NavbarStyling.responsivNav} style={size.width < 768 ? (navOpen ? { 'left': '0px' } : { 'left': '-100%' }) : { 'left': '0px' }}>
+            <ul style={navOpen ? { 'left': '0px' } : { 'left': '-100%' }}>
                 <figure onClick={() => setNavOpen(!navOpen)}>
                     <h1>G</h1>
                 </figure>
@@ -36,8 +68,8 @@ const ResponsivNavigation = ({ hoverBackground }) => {
                     </NavLink>
                 )}
             </ul>
-
         </nav>
+
     );
 }
 

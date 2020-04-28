@@ -6,22 +6,37 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 35%;
+    padding: 5% 3% 10% 3%;
+    margin-left: 5%;
+    margin-top: 5%;
+    
+
+    @media screen and (max-width: 768px) {
+        margin-left: 20%;
+        width: 60%;
+        border: 0px;
+    }
     `;
 
 const PlainText = styled.p`
     text-align: center;
     font-size: 1.5em;
-    margin-inline-start: 150px;
-    margin-inline-end: 150px;
-     @media screen and (max-width: 768px) {
+    color: #ffffff;
+    
+    @media screen and (max-width: 768px) {
         font-size: 1em;
-        margin-inline-start: 20px;
-        margin-inline-end: 20px;
     }
-`; 
+`;
 
 const HeadLine = styled.h1`
     font-size: 2em;
+    padding-bottom: 8%;
+    margin-bottom: 8%;
+    text-align: center;
+    width: 50%;
+    color: yellow;
+    border-bottom: 2px solid #ffffff;
     @media screen and (max-width: 768px) {
         font-size: 1.3em;
     }
@@ -30,7 +45,7 @@ const HeadLine = styled.h1`
 const AboutMe = () => {
     return (
         <Container>
-            <HeadLine>Gustaf Ekelund</HeadLine>
+            <HeadLine>ABOUT ME</HeadLine>
             <PlainText>
                 Ambitious and driven person with leadership, customer service, sales and marketing experiences.
                 In my professional life, I have always been given a lot of responsibility from my previous employers.

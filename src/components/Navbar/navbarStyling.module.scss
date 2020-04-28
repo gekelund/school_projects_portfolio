@@ -2,6 +2,8 @@
 
 
 nav.responsivNav {
+    position: fixed;
+    top: 0;
     background: $PrimaryBackgroundColor;
     height: 60px;
     width: 100%;
@@ -19,6 +21,7 @@ nav.responsivNav {
     }
 
         figure {
+            color: yellow;
             margin-block-start: 0;
             margin-block-end: 0;
             margin-inline-start: 0;
@@ -59,7 +62,7 @@ nav.responsivNav {
 @media screen and (max-width: 768px) {
     nav.responsivNav {
         height: 100%;
-        width: 300px;
+        width: 100%;
         position: fixed;
         top: 0;
         transition: 300ms ease all;
@@ -67,7 +70,7 @@ nav.responsivNav {
 
             ul {
                 height: 100%;
-                width: 220px;
+                width: 0%;
                 position: fixed;
                 top: 80px;
                 flex-direction: column;
@@ -82,18 +85,20 @@ nav.responsivNav {
 
                     li {
                         width: 100%;
-                        padding-left: 0;
-                        padding-right: 0;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        margin-right: -40px;
+                        margin-left: 40px;
                     }
 
                     a {
                         flex-direction: row-reverse;
                         justify-content: space-between;
-                        width: 80%;
-                        margin-right: 10px;
-                        padding-left: 70px;
-                        margin-left: 50px;
-                        padding-right: 15px;
+                        width: 100%;
+                        margin-right: 0px;
+                        padding-left: 100px;
+                        margin-left: 100px;
+                        padding-right: 100px;
                     }
             }
 

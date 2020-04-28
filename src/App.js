@@ -6,21 +6,16 @@ import NavbarPath from './components/Navbar/navbarPath';
 import IndexStyle from '../src/index.module.scss';
 
 
+
 function App() {
   return (
+
     <BrowserRouter>
-      <div className={IndexStyle.RootContainer}>
-        <header className={IndexStyle.header}>
-          <ResponsivNavigation />
-        </header>
-        <div className={IndexStyle.main}>
-          <NavbarPath />
-        </div>
-        <div className={IndexStyle.footer}>
-          <Sidebar />
-        </div>
-      </div>
+      <ResponsivNavigation />
+      <NavbarPath />
+      <Sidebar />
     </BrowserRouter>
+
   );
 }
 

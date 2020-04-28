@@ -10,10 +10,19 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     list-style: none;
+    margin-top: 5%;
+    
+
+    @media screen and (max-width: 768px) {
+        
+        margin-bottom: 20%;
+        margin-top: 20%;
+    }
     `;
 
 const HeadLine = styled.h1`
     font-size: 2em;
+    color: #ffffff;
     @media screen and (max-width: 768px) {
         font-size: 1.3em;
     }
@@ -24,6 +33,11 @@ const SkillContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        
+    }
 `;
 
 const EachSkill = styled.p`
@@ -32,6 +46,7 @@ const EachSkill = styled.p`
     align-items: center;
     margin-right: auto;
     font-size: 1.4em;
+    color: #ffffff;
 `;
 
 const SkillBarContainer = styled.div`
@@ -40,6 +55,10 @@ const SkillBarContainer = styled.div`
     background-color: #ddd;
     border-radius: 20px;
     box-shadow: 5px 5px 5px 3px darkgray inset;
+
+    @media screen and (max-width: 768px) {
+        width: 200px;
+    }
 `;
 
 const Skills = styled.div`
@@ -51,54 +70,67 @@ const Skills = styled.div`
     box-shadow: 5px 5px 5px 3px darkorange inset;
 `;
 
-const Contact = (props) => {
+const ListSkills = [
+    {
+        skill: "JavaScript",
+        icon: faJsSquare,
+        iconStyle: { "marginRight": "10px", "color": "#ffe600" },
+        style: { "width": "90%", "background-color": "orange" }
+    },
+    {
+        skill: "React",
+        icon: faReact,
+        iconStyle: { "marginRight": "10px", "color": "blue" },
+        style: { "width": "80%", "background-color": "orange" }
+    },
+    {
+        skill: "Node js",
+        icon: faNodeJs,
+        iconStyle: { "marginRight": "10px", "color": "green" },
+        style: { "width": "50%", "background-color": "orange" }
+    },
+    {
+        skill: "HTML",
+        icon: faHtml5,
+        iconStyle: { "marginRight": "10px", "color": "red" },
+        style: { "width": "97%", "background-color": "orange" }
+    },
+    {
+        skill: "CSS",
+        icon: faCss3Alt,
+        iconStyle: { "marginRight": "10px", "color": "orange" },
+        style: { "width": "95%", "background-color": "orange" }
+    },
+    {
+        skill: "SASS",
+        icon: faSass,
+        iconStyle: { "marginRight": "10px", "color": "red" },
+        style: { "width": "50%", "background-color": "orange" }
+    },
+    {
+        skill: "Styled Components",
+        icon: "",
+        iconStyle: {},
+        style: { "width": "70%", "background-color": "orange" }
+    },
+]
+
+const Skill = (props) => {
     return (
         <Container>
-            <HeadLine>Skills</HeadLine>
-            <SkillContainer>
-                <EachSkill><FontAwesomeIcon style={{ "marginRight": "10px", "color": "#ffe600" }} icon={faJsSquare} />JavaScript</EachSkill>
-                <SkillBarContainer>
-                    <Skills style={{ "width": "90%", "background-color": "orange" }}></Skills>
-                </SkillBarContainer>
-            </SkillContainer>
-            <SkillContainer>
-                <EachSkill><FontAwesomeIcon style={{ "marginRight": "10px", "color": "blue" }} icon={faReact} />React</EachSkill>
-                <SkillBarContainer>
-                    <Skills style={{ "width": "80%", "background-color": "orange" }}></Skills>
-                </SkillBarContainer>
-            </SkillContainer>
-            <SkillContainer>
-                <EachSkill><FontAwesomeIcon style={{ "marginRight": "10px", "color": "green" }} icon={faNodeJs} />Node.js</EachSkill>
-                <SkillBarContainer>
-                    <Skills style={{ "width": "50%", "background-color": "orange" }}></Skills>
-                </SkillBarContainer>
-            </SkillContainer>
-            <SkillContainer>
-                <EachSkill><FontAwesomeIcon style={{ "marginRight": "10px", "color": "red" }} icon={faHtml5} />HTML</EachSkill>
-                <SkillBarContainer>
-                    <Skills style={{ "width": "97%", "background-color": "orange" }}></Skills>
-                </SkillBarContainer>
-            </SkillContainer>
-            <SkillContainer>
-                <EachSkill><FontAwesomeIcon style={{ "marginRight": "10px", "color": "orange" }} icon={faCss3Alt} />CSS</EachSkill>
-                <SkillBarContainer>
-                    <Skills style={{ "width": "95%", "background-color": "orange" }}></Skills>
-                </SkillBarContainer>
-            </SkillContainer>
-            <SkillContainer>
-                <EachSkill><FontAwesomeIcon style={{ "marginRight": "10px", "color": "red" }} icon={faSass} />SASS</EachSkill>
-                <SkillBarContainer>
-                    <Skills style={{ "width": "50%", "background-color": "orange" }}></Skills>
-                </SkillBarContainer>
-            </SkillContainer>
-            <SkillContainer>
-                <EachSkill>Styled Components</EachSkill>
-                <SkillBarContainer>
-                    <Skills style={{ "width": "70%", "background-color": "orange" }}></Skills>
-                </SkillBarContainer>
-            </SkillContainer>
+            {/* <HeadLine>Skills</HeadLine> */}
+
+            {ListSkills.map(skill =>
+                <SkillContainer>
+                    <EachSkill><FontAwesomeIcon style={skill.iconStyle} icon={skill.icon} />{skill.skill}</EachSkill>
+                    <SkillBarContainer>
+                        <Skills style={skill.style}></Skills>
+                    </SkillBarContainer>
+                </SkillContainer>
+            )}
+
         </Container>
     );
 }
 
-export default Contact;
+export default Skill;

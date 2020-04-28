@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 80vh;
     `;
 
 const Headline = styled.h1`
@@ -26,12 +28,23 @@ const SubHeadline = styled.h3`
     }
 `;
 
+const Span = styled.span`
+    color: yellow;
+`;
+
 const Home = (props) => {
+
+
     return (
+
+
         <Container>
-            <Headline>I am Gustaf Ekelund</Headline>
+
+            <Headline><Span>I am G</Span>ustaf Ekelund</Headline>
             <SubHeadline>Front End Developer</SubHeadline>
+
         </Container>
+
     );
 }
 
