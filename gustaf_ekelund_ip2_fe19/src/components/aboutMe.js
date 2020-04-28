@@ -1,6 +1,7 @@
 import React from 'react';
 import Components from '../styles/ComponentStyles/Components.module.scss';
 
+
 const AboutMe = () => {
     return (
         <div className={Components.AboutMe}>
